@@ -46,17 +46,33 @@ public class Conta {
     public void setLimite(double limite) {
         this.limite = limite;
     }
-
-public boolean sacar(double valor) {
-    // Uso do IF para verificar a disponibilidade financeira (Saldo + Limite)
-    if (this.saldo + this.limite >= valor) {
-    this.saldo = this.saldo - valor;
-    System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
-    return true;
-    } else {
-    System.out.println("Erro: Saldo e limite insuficientes para o saque de R$ " + valor);
-    return false;
+ 
+    public void depositar(double valor) {
+        if(valor > 0) { 
+            this.saldo += valor;
+            System.out.println("DEPOSITO RS" + valor + " realizado com sucesso na conta de " + cliente);
+        }
     }
-}
 
+    public boolean sacar(double valor) {
+        // Uso do IF para verificar a disponibilidade financeira (Saldo + Limite)
+        if (this.saldo + this.limite >= valor) {
+            this.saldo = this.saldo - valor;
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
+            return true;
+        } else {
+            System.out.println("Erro: Saldo e limite insuficientes para o saque de R$ " + valor);
+            return false;
+        }
+    } 
+    
+    public boolean pagarDespesa(Despesa despesa) {
+        if (despesa.getStatus().equals("Paga")) {
+            System.out.println("a despesa " + despesa.getDescricao() + " paga com sucesso");
+            return true;
+        } else {
+            System.out.println("nao foi possivel pagar a despesa " + despesa.getDescricao() + " por falta de saldo");
+            return false;
+        }
+    }
 }
