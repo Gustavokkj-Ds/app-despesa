@@ -8,6 +8,9 @@ public class Conta {
     private double saldo;
     private double limite;
 
+ public Conta() {
+    }
+
     public Conta(int numero, String cliente, double saldo, double limite) {
         this.numero = numero;
         this.cliente = cliente;
