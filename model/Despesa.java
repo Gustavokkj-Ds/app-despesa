@@ -7,6 +7,9 @@ public class Despesa {
     private double valor;
     private String status;
 
+  public Despesa() {
+    }
+
     public Despesa(String descricao, double valor) {
         this.descricao = descricao;
         this.valor = valor;
