@@ -6,10 +6,13 @@ public class Receita {
     //atributos
     private String origem;
     private double valor;
+
+ //construtor vazio
+    public Receita() {
+    }
     
     //construtor
     public Receita(String origem, double valor) {
-        
         this.origem = origem;
         this.valor = valor;
     }
